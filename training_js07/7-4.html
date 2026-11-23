@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n = 100
+        for (let i = 2; i <= n; i++){
+            if (!isPrime(i)) continue
+            console.log(i)
+        }
+
+        function isPrime(n){
+            if(n <= 3){
+                return n > 1
+            
+            // nは2の倍数、あるいは3の倍数であれば素数ではない
+            } else if (n % 2 === 0 || n % 3 === 0){
+                return false;
+            }
+            i = 5;
+            while (i ** 2 <= n){
+                if (n % i === 0 || n % (i + 2) === 0){
+                    return false;
+                }
+                i += 6;
+            }
+            return true;
+        }
+
+        for (let i = 2; i <=500; i++) {
+            if (isPrime(i)) {
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+</html>
